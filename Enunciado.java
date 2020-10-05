@@ -1,5 +1,7 @@
 public class Enunciado{
 	public static void main(String[] args) {
+		
+		int centinela = 0;
 		char matriz[][];//Declaración
 		matriz = new char[7][9];//Inicialización
 
@@ -44,5 +46,10 @@ public class Enunciado{
 		 	}
 		 	System.out.println(ConsoleColors.RESET);
 		}
+
+	//System.out.println(ConsoleFile.getPath("info_banderas.txt"));
+
+		ConsoleFile.read("info_banderas.csv");
+
 	}
 }

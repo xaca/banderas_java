@@ -1,0 +1,94 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.*;
+
+public class ConsoleFile{
+	
+	/*public static String[] read(String filename){
+
+		FileWriter fw = null;
+		try {
+			//crea el flujo para escribir en el archivo
+			flwriter = new FileWriter("C:\\archivos\\estudiantes.txt");
+			//crea un buffer o flujo intermedio antes de escribir directamente en el archivo
+			BufferedWriter bfwriter = new BufferedWriter(flwriter);
+			for (Estudiante estudiante : lista) {
+				//escribe los datos en el archivo
+				bfwriter.write(estudiante.getCedula() + "," + estudiante.getNombres() + "," + estudiante.getApellidos()
+						+ "," + estudiante.getTelefono() + "," + estudiante.getDireccion() + "\n");
+			}
+			//cierra el buffer intermedio
+			bfwriter.close();
+			System.out.println("Archivo creado satisfactoriamente..");
+ 
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (flwriter != null) {
+				try {//cierra el flujo principal
+					flwriter.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+	}*/
+
+	public static String[] ArrayListToStrings(ArrayList<String> al)
+	{
+		String []out = new String[al.size()];
+		byte count = 0;
+		for (String token : al) {
+			out[count++] = token;
+			System.out.print(token);
+		}System.out.println(); 
+		return out;
+	}
+
+	public static String[] processLine(String line)
+	{
+		ArrayList<String> tokens = new ArrayList<String>();
+		StringTokenizer st = new StringTokenizer(line,";");
+
+		while (st.hasMoreTokens()){
+            tokens.add(st.nextToken()); 
+		} 
+
+		return ArrayListToStrings(tokens);
+	}
+
+		//crea el archivo en disco, retorna la lista de estudiantes
+	public static String[] read(String file_name) {
+		// crea el flujo para leer desde el archivo
+		File file = new File(file_name);
+		Scanner scanner;
+		byte count = 0; 
+		try {
+			//se pasa el flujo al objeto scanner
+			scanner = new Scanner(file);
+			while (scanner.hasNextLine()) {
+				// el objeto scanner lee linea a linea desde el archivo
+				processLine(scanner.nextLine());
+				if(count++==2)break;
+			}
+			//se cierra el ojeto scanner
+			scanner.close();
+		} catch (FileNotFoundException e) {
+			//e.printStackTrace();
+			System.out.println("Error no se encuentra el archivo "+file_name);
+		}
+		return null;
+	}
+
+	public static String getPath(String ruta)
+	{
+		return new File(ruta).getPath();
+	}
+
+}
