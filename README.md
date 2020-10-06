@@ -20,6 +20,24 @@
 
 ## Instrucciones de cada bandera
 
+1. Todas las banderas tendran un estilo pixel art, como el ejemplo a continuación.
 
+![Bandera Gran Bretaña](recursos/bandera_ejemplo.png) 
 
+2. Dibujar la bandera separando colores para cada pixel, según la siguiente lista
 
+	- 1 : Rojo
+	- 2 : Azul
+	- 3 : Blanco
+	- 4 : Amarillo
+	- 5 : Verde
+	- 6 : Morado
+	- 7 : Cyan
+	- 8 : Negro
+
+3. Si algún color de la bandera no esta en la lista, se debe usar un color sustituto, que permita que la bandera se entienda
+
+4. Si la bandera tiene un escudo o adorno, se debe aproximar según criterio del estudiante. Dos ejemplos, de Costa Rica y Mejico.
+
+![Bandera Mejico](recursos/mejico.png)
+![Bandera Costa Rica](recursos/costa_rica.png)
