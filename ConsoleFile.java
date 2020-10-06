@@ -46,8 +46,8 @@ public class ConsoleFile{
 		byte count = 0;
 		for (String token : al) {
 			out[count++] = token;
-			System.out.print(token);
-		}System.out.println(); 
+			//System.out.print(token);
+		}//System.out.println(); 
 		return out;
 	}
 
@@ -67,15 +67,15 @@ public class ConsoleFile{
 	public static String[] read(String file_name) {
 		// crea el flujo para leer desde el archivo
 		File file = new File(file_name);
+		ArrayList<String> out = new ArrayList<String>(); 
 		Scanner scanner;
-		byte count = 0; 
+
 		try {
 			//se pasa el flujo al objeto scanner
 			scanner = new Scanner(file);
 			while (scanner.hasNextLine()) {
 				// el objeto scanner lee linea a linea desde el archivo
-				processLine(scanner.nextLine());
-				if(count++==2)break;
+				out.add(scanner.nextLine());				
 			}
 			//se cierra el ojeto scanner
 			scanner.close();
@@ -83,7 +83,18 @@ public class ConsoleFile{
 			//e.printStackTrace();
 			System.out.println("Error no se encuentra el archivo "+file_name);
 		}
-		return null;
+		return ArrayListToStrings(out);
+	}
+
+	public static String[] StringToArray(String str){
+		StringTokenizer st = new StringTokenizer(str,";");
+		String[] out = new String[st.countTokens()];
+		byte count = 0;
+		while(st.hasMoreTokens()){
+			out[count++] = st.nextToken();
+			//System.out.print(token);
+		}//System.out.println(); 
+		return out;
 	}
 
 	public static String getPath(String ruta)
