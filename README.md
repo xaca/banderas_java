@@ -1,4 +1,4 @@
-# Banderas
+# Fun with flags!
 
 ## Tener en cuenta:
 
@@ -50,6 +50,6 @@
 
 Son programas de java, con funciones listas, que el estudiante podrá usar como ayuda para realizar operaciones en el juego.
 
-	- ConsoleColors: Contiene la información de los colores
-	- ConsoleFile: Realiza operaciones con archivos
-	- ConsoleInput: Permite leer datos que el usuario ingrese
+- ConsoleColors: Contiene la información de los colores
+- ConsoleFile: Realiza operaciones con archivos
+- ConsoleInput: Permite leer datos que el usuario ingrese
