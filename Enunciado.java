@@ -1,14 +1,17 @@
 public class Enunciado{
 	public static void main(String[] args) {
 
-		//System.out.println(ConsoleFile.getPath("info_banderas.txt"));
+		
 		ConsoleFile.read("recursos/info_banderas.csv");
+
 		System.out.println("Ingrese una cadena");
 		String temp = ConsoleInput.getString();
 		System.out.println("La cadena leida fue:"+temp);
+
 		System.out.println("Ingrese un numero entero");
 		int entero = ConsoleInput.getInt();
 		System.out.println("El entero leido fue:"+entero);
+
 		System.out.println("Ingrese un numero flotante");
 		float flotante = ConsoleInput.getFloat();
 		System.out.println("El flotante leido fue:"+flotante);

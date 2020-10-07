@@ -53,3 +53,19 @@ Son programas de java, con funciones listas, que el estudiante podrá usar como 
 - ConsoleColors: Contiene la información de los colores
 - ConsoleFile: Realiza operaciones con archivos
 - ConsoleInput: Permite leer datos que el usuario ingrese
+
+## Plantilla para imprimir
+
+- [Plnatilla - formato carta](recursos/)
+
+## Referencias
+
+- [Flag Game](http://www.flag-game.com/)
+- [Flagpedia](https://flagpedia.net/continent/south-america/quiz)
+- [Fun with flags](http://fun-with-flags.com/)
+- [Game brains](https://www.gamesforthebrain.com/game/flag/)
+- [Flag Games](https://www.proprofs.com/games/flags/)
+
+## Inspiración
+
+- [Fun with flags - Big Bang Theory](https://www.youtube.com/watch?v=cobmapyCgKA)
