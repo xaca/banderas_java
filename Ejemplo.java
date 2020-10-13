@@ -2,7 +2,7 @@ public class Ejemplo{
 
 	public static void imprimirFila(String fila[])
 	{
-		for (byte i=0;i<fila.length;i++) {
+		for (int i=0;i<fila.length;i++) {
 			
 	 		if(fila[i].equals("1"))
 	 		{

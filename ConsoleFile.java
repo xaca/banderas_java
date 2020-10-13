@@ -43,7 +43,7 @@ public class ConsoleFile{
 	public static String[] ArrayListToStrings(ArrayList<String> al)
 	{
 		String []out = new String[al.size()];
-		byte count = 0;
+		int count = 0;
 		for (String token : al) {
 			out[count++] = token;
 			//System.out.print(token);
@@ -89,7 +89,7 @@ public class ConsoleFile{
 	public static String[] StringToArray(String str){
 		StringTokenizer st = new StringTokenizer(str,";");
 		String[] out = new String[st.countTokens()];
-		byte count = 0;
+		int count = 0;
 		while(st.hasMoreTokens()){
 			out[count++] = st.nextToken();
 			//System.out.print(token);
