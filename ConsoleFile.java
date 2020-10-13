@@ -43,7 +43,7 @@ public class ConsoleFile{
 	public static String[] arrayListToStrings(ArrayList<String> al)
 	{
 		String []out = new String[al.size()];
-		byte count = 0;
+		short count = 0;
 		for (String token : al) {
 			out[count++] = token;
 			//System.out.print(token);
