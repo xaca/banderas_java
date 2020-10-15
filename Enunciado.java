@@ -73,7 +73,51 @@ public class Enunciado{
 
 	}
 
-	public static void imprimirBandera(String[] banderas,int indice)
+	public static void imprimirFila(String fila[])
+	{
+		for (int i=0;i<fila.length;i++) {
+			
+	 		if(fila[i].equals("1"))
+	 		{
+	 			System.out.print(ConsoleColors.RED_BACKGROUND+"  ");
+	 		}
+	 		if(fila[i].equals("2"))
+	 		{
+	 			System.out.print(ConsoleColors.BLUE_BACKGROUND+"  ");
+	 		}
+	 		if(fila[i].equals("3"))
+	 		{
+	 			System.out.print(ConsoleColors.WHITE_BACKGROUND+"  ");
+	 		}
+	 		if(fila[i].equals("4"))
+	 		{
+	 			System.out.print(ConsoleColors.YELLOW_BACKGROUND+"  ");
+	 		}		 		
+		}
+		System.out.println(ConsoleColors.RESET);
+	}
+
+	public static int subMenuSeleccionBandera(String[] banderas)
+	{
+		int opc = 0;
+
+		do{
+			System.out.println("Ingrese un valor entre 1 y "+banderas.length);
+			opc = ConsoleInput.getIn();
+		}while(opc>=1 && opc<=banderas.length);
+
+		return opc-1;
+	}
+
+	public static void imprimirGraficoBandera(String[] banderas, int indice)
+	{
+		for (int i=indice;i<indice+20;i++ ) {
+			imprimirFila(banderas[i].split(";"));
+		}
+			
+	}
+
+	public static void imprimirInformacionBandera(String[] banderas,int indice)
 	{
 		String fila[];
 
@@ -91,7 +135,7 @@ public class Enunciado{
 		}
 	}
 
-	public static int[] RandomizeArray(int[] array){
+	public static int[] desordenarArreglo(int[] array){
 		Random rgen = new Random();  // Random number generator			
  
 		for (int i=0; i<array.length; i++) {
@@ -124,10 +168,10 @@ public class Enunciado{
 				- Jueves presentación final (exposición y entrega repositorio)
 				- Jueves examen final en aula digital
 		*/
-		int centinela = 0;
+		int centinela = 0, opcion_bandera = 0;
 		int indices[] = crearIndices(20);
 		//System.out.println(Arrays.toString(indices));
-		indices = RandomizeArray(indices);
+		indices = desordenarArreglo(indices);
 		//System.out.println(Arrays.toString(indices));
 		String banderas[] = ConsoleFile.read("recursos/info_banderas.csv");
 
@@ -138,8 +182,9 @@ public class Enunciado{
 			System.out.println("2. Restar");
 			System.out.println("3. Multiplicar");
 			System.out.println("4. Dividir");
-			System.out.println("5. Imprimir bandera");
-			System.out.println("6. salir");
+			System.out.println("5. Imprimir informacion bandera");
+			System.out.println("6. Imprimir grafico bandera");
+			System.out.println("7. salir");
 			centinela = ConsoleInput.getInt();
 
 			switch(centinela)
@@ -157,14 +202,19 @@ public class Enunciado{
 						division();
 						break;
 				case 5: System.out.println();
-						imprimirBandera(banderas,indices[0]);
+						opcion_bandera = subMenuSeleccionBandera(banderas);
+						imprimirInformacionBandera(banderas,indices[opcion_bandera]);
 						break;
-				case 6: System.out.println("Hasta luego ;)");
+				case 6: System.out.println();
+						opcion_bandera = subMenuSeleccionBandera(banderas);
+						imprimirGraficoBandera(banderas,indices[0]);
+						break;
+				case 7: System.out.println("Hasta luego ;)");
 						break;
 				default: System.out.println("Opcion no disponible");
 			}
 
-		}while(centinela!=6);
+		}while(centinela!=7);
 	}
 
 	public static void main(String[] args) {
@@ -183,6 +233,6 @@ public class Enunciado{
 		float flotante = ConsoleInput.getFloat();
 		System.out.println("El flotante leido fue:"+flotante);*/
 
-		menu();
+		menu();//Invocavión de la función
 	}
 }
