@@ -57,7 +57,7 @@ Son programas de java, con funciones listas, que el estudiante podrá usar como 
 
 ## Plantilla para imprimir
 
-- [Plnatilla - formato carta](recursos/guia_imprimible_bandera.pdf)
+- [Plantilla - formato carta](recursos/guia_imprimible_bandera.pdf)
 
 ## Referencias
 
@@ -66,6 +66,10 @@ Son programas de java, con funciones listas, que el estudiante podrá usar como 
 - [Fun with flags](http://fun-with-flags.com/)
 - [Game brains](https://www.gamesforthebrain.com/game/flag/)
 - [Flag Games](https://www.proprofs.com/games/flags/)
+- [Desordenar un arreglo](https://www.programcreek.com/2012/02/java-method-to-shuffle-an-int-array-with-random-order/)
+- [Imprimir un arreglo](https://www.javatpoint.com/how-to-print-array-in-java)
+- [Random java](https://docs.oracle.com/javase/7/docs/api/java/util/Random.html)
+- [Partir una cadena - split](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#split(java.lang.String))
 
 ## Inspiración
 
