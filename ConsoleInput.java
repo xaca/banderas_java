@@ -11,7 +11,7 @@ public class ConsoleInput{
 		try{
 			// Initialize the Scanner object to use the standard input
         	temp = sc.nextInt();
-                sc.nextLine();
+            sc.nextLine();
 	        // Close the Scanner
 		}catch(Exception e)
 		{
@@ -30,7 +30,7 @@ public class ConsoleInput{
 		try{
 			// Initialize the Scanner object to use the standard input
 	        temp = sc.nextFloat();
-                sc.nextLine();
+            sc.nextLine();
         }catch(Exception e)
 		{
 			refreshScanner();
