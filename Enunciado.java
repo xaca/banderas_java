@@ -1,5 +1,10 @@
+import java.util.*;
+import java.util.Arrays; 
+
 public class Enunciado{
 
+	//Decoracion con ascii art
+	//Funcion que permita imprimir caracteres del español, ejemplo ñ
 
 	public static void sumar()
 	{
@@ -68,6 +73,48 @@ public class Enunciado{
 
 	}
 
+	public static void imprimirBandera(String[] banderas,int indice)
+	{
+		String fila[];
+
+		for (int i=indice;i<indice+20;i++ ) {
+			if(i == indice)
+			{
+				fila = banderas[i].split(";");
+				System.out.println("Nombre pais: "+fila[0]);
+				/*System.out.println("Capital: "+fila[1]);
+				System.out.println("Idioma: "+fila[2]);*/
+			}
+			else{
+				System.out.println(banderas[i]);
+			}
+		}
+	}
+
+	public static int[] RandomizeArray(int[] array){
+		Random rgen = new Random();  // Random number generator			
+ 
+		for (int i=0; i<array.length; i++) {
+		    int randomPosition = rgen.nextInt(array.length);
+		    int temp = array[i];
+		    array[i] = array[randomPosition];
+		    array[randomPosition] = temp;
+		}
+ 
+		return array;
+	}
+
+	public static int[] crearIndices(int total)
+	{
+		int indices[] = new int[total];
+		int contador = 0;
+		for (int i=0;i<indices.length;i++) {
+			indices[i] = contador;
+			contador+=20;		
+		}
+		return indices;
+	}
+
 	public static void menu()
 	{
 		/*
@@ -78,6 +125,11 @@ public class Enunciado{
 				- Jueves examen final en aula digital
 		*/
 		int centinela = 0;
+		int indices[] = crearIndices(20);
+		//System.out.println(Arrays.toString(indices));
+		indices = RandomizeArray(indices);
+		//System.out.println(Arrays.toString(indices));
+		String banderas[] = ConsoleFile.read("recursos/info_banderas.csv");
 
 		do{
 			System.out.println();
@@ -86,7 +138,8 @@ public class Enunciado{
 			System.out.println("2. Restar");
 			System.out.println("3. Multiplicar");
 			System.out.println("4. Dividir");
-			System.out.println("5. salir");
+			System.out.println("5. Imprimir bandera");
+			System.out.println("6. salir");
 			centinela = ConsoleInput.getInt();
 
 			switch(centinela)
@@ -103,19 +156,21 @@ public class Enunciado{
 				case 4: System.out.println();
 						division();
 						break;
-				case 5: System.out.println("Hasta luego ;)");
+				case 5: System.out.println();
+						imprimirBandera(banderas,indices[0]);
+						break;
+				case 6: System.out.println("Hasta luego ;)");
 						break;
 				default: System.out.println("Opcion no disponible");
 			}
 
-		}while(centinela!=5);
+		}while(centinela!=6);
 	}
 
 	public static void main(String[] args) {
 
 		
-		/*String banderas[] = ConsoleFile.read("recursos/info_banderas.csv");
-
+		/*
 		System.out.println("Ingrese una cadena");
 		String temp = ConsoleInput.getString();
 		System.out.println("La cadena leida fue:"+temp);
