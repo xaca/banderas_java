@@ -16,6 +16,58 @@ public class Enunciado{
 		System.out.println("La suma es:"+c);
 	}
 
+	public static void restar()
+	{
+		float a,b,c;
+
+		System.out.println(":: Resta ::");
+		System.out.println("Ingrese a");
+		a = ConsoleInput.getFloat();
+		System.out.println("Ingrese b");
+		b = ConsoleInput.getFloat();
+
+		c = a - b;
+
+		System.out.println("La resta es:"+c);
+	}
+
+	public static void multiplicar()
+	{
+		float a,b,c;
+
+		System.out.println(":: Multiplicar ::");
+		System.out.println("Ingrese a");
+		a = ConsoleInput.getFloat();
+		System.out.println("Ingrese b");
+		b = ConsoleInput.getFloat();
+
+		c = a * b;
+
+		System.out.println("La multiplicacion es:"+c);
+	}
+
+	public static void division()
+	{
+		float a,b,c;
+
+		System.out.println(":: Division ::");
+		System.out.println("Ingrese a");
+		a = ConsoleInput.getFloat();
+		System.out.println("Ingrese b");
+		b = ConsoleInput.getFloat();
+
+		if(b!=0)
+		{
+			c = a / b;
+			System.out.println("La division es:"+c);
+		}
+		else
+		{
+			System.out.println("Error division por cero");
+		}
+
+	}
+
 	public static void menu()
 	{
 		/*
@@ -39,7 +91,17 @@ public class Enunciado{
 
 			switch(centinela)
 			{
-				case 1: sumar();
+				case 1:	System.out.println();
+				 		sumar();
+						break;
+				case 2: System.out.println();
+						restar();
+						break;
+				case 3: System.out.println();
+						multiplicar();
+						break;
+				case 4: System.out.println();
+						division();
 						break;
 				case 5: System.out.println("Hasta luego ;)");
 						break;
