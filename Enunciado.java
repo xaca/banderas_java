@@ -97,14 +97,14 @@ public class Enunciado{
 		System.out.println(ConsoleColors.RESET);
 	}
 
-	public static int subMenuSeleccionBandera(String[] banderas)
+	public static int subMenuSeleccionBandera(int[] indices)
 	{
 		int opc = 0;
 
 		do{
-			System.out.println("Ingrese un valor entre 1 y "+banderas.length);
-			opc = ConsoleInput.getIn();
-		}while(opc>=1 && opc<=banderas.length);
+			System.out.println("Ingrese un valor entre 1 y "+indices.length);
+			opc = ConsoleInput.getInt();
+		}while(opc<0 || opc==0 || opc>indices.length);
 
 		return opc-1;
 	}
@@ -169,11 +169,11 @@ public class Enunciado{
 				- Jueves examen final en aula digital
 		*/
 		int centinela = 0, opcion_bandera = 0;
-		int indices[] = crearIndices(20);
+		String banderas[] = ConsoleFile.read("recursos/info_banderas.csv");
+		int indices[] = crearIndices(banderas.length/20);
 		//System.out.println(Arrays.toString(indices));
 		indices = desordenarArreglo(indices);
 		//System.out.println(Arrays.toString(indices));
-		String banderas[] = ConsoleFile.read("recursos/info_banderas.csv");
 
 		do{
 			System.out.println();
@@ -202,12 +202,12 @@ public class Enunciado{
 						division();
 						break;
 				case 5: System.out.println();
-						opcion_bandera = subMenuSeleccionBandera(banderas);
+						opcion_bandera = subMenuSeleccionBandera(indices);
 						imprimirInformacionBandera(banderas,indices[opcion_bandera]);
 						break;
 				case 6: System.out.println();
-						opcion_bandera = subMenuSeleccionBandera(banderas);
-						imprimirGraficoBandera(banderas,indices[0]);
+						opcion_bandera = subMenuSeleccionBandera(indices);
+						imprimirGraficoBandera(banderas,indices[opcion_bandera]);
 						break;
 				case 7: System.out.println("Hasta luego ;)");
 						break;
