@@ -38,6 +38,7 @@
 	- 6 : Morado
 	- 7 : Cyan
 	- 8 : Negro
+	- 9 : Gris
 
 5. Si algún color de la bandera no esta en la lista, se debe usar un color sustituto, que permita que la bandera se entienda
 
