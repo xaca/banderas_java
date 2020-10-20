@@ -19,7 +19,23 @@ public class Ejemplo{
 	 		if(fila[i].equals("4"))
 	 		{
 	 			System.out.print(ConsoleColors.YELLOW_BACKGROUND+"  ");
-	 		}		 		
+	 		}
+			if(fila[i].equals("5"))
+	 		{
+	 			System.out.print(ConsoleColors.GREEN_BACKGROUND+"  ");
+	 		}	
+	 		if(fila[i].equals("6"))
+	 		{
+	 			System.out.print(ConsoleColors.PURPLE_BACKGROUND+"  ");
+	 		}	
+	 		if(fila[i].equals("7"))
+	 		{
+	 			System.out.print(ConsoleColors.CYAN_BACKGROUND+"  ");
+	 		}	
+	 		if(fila[i].equals("8"))
+	 		{
+	 			System.out.print(ConsoleColors.BLACK_BACKGROUND+"  ");
+	 		}	 				 			 			 	
 		}
 		System.out.println(ConsoleColors.RESET);
 	}
