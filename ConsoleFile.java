@@ -64,7 +64,7 @@ public class ConsoleFile{
 	}
 
 		//crea el archivo en disco, retorna la lista de estudiantes
-	public static String[] read(String file_name) {
+	public static String[] read(String file_name){
 		// crea el flujo para leer desde el archivo
 		File file = new File(file_name);
 		ArrayList<String> out = new ArrayList<String>(); 
