@@ -57,7 +57,7 @@ Son programas de java, con funciones listas, que el estudiante podrá usar como 
 
 ## Plantilla para imprimir
 
-- [Plnatilla - formato carta](recursos/guia_imprimible_bandera.pdf)
+- [Plantilla - formato carta](recursos/guia_imprimible_bandera.pdf)
 
 ## Referencias
 
